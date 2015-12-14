@@ -18,22 +18,18 @@ def move_to(direction, coordinates)
 end
 
 def count_houses
-  total_houses = 1
-  visited_houses = { "0x0" => 2 }
-  position_santa = [0, 0]
-  position_robot = [0, 0]
+  visited_houses = { "0x0" => 1 }
+  coordinates_santa = [0, 0]
+  coordinates_robot = [0, 0]
 
   @input.each_with_index do |direction, index|
-    position = index.even? ? position_santa : position_robot
-    moved = move_to(direction, position)
-
-    key = "#{moved[0]}x#{moved[1]}"
-
-      total_houses = total_houses + 1
-      visited_houses[key] = 1
+    coordinates = index.even? ? coordinates_santa : coordinates_robot
+    position = move_to(direction, coordinates)
+    key = "#{position[0]}x#{position[1]}"
+    visited_houses[key] = 1
   end
 
-  return visited_houses.size
+  visited_houses.size
 end
 
 p count_houses
