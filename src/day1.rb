@@ -5,8 +5,8 @@ input = STDIN.read.chomp.split('')
 floor = 0
 position = -1
 
-input.each_with_index do |ch, index|
-  case ch
+input.each_with_index do |char, index|
+  case char
   when '('
     floor = floor + 1
   when ')'
