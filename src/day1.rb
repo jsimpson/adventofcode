@@ -18,5 +18,4 @@ input.each_with_index do |ch, index|
   end
 end
 
-puts "floor number #{floor}"
-puts "position number #{position}"
+p floor, position
