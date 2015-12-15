@@ -10,7 +10,7 @@ def lowest_positive_number(number_of_leading_zeros = 5)
   loop do
     md5 = Digest::MD5.hexdigest("#{@input}#{i}")
     break if md5.start_with?(zeroes)
-    i = i +1
+    i = i + 1
   end
 
   i
